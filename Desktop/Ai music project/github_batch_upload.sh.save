@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# GitHub Batch Upload Script - Digital Harmony Studio MVP
+echo "🚀 Starting GitHub Batch Upload for Digital Harmony Studio MVP"
+echo "=================================================="
+
+# Fix Git locks
+echo "🔧 Step 1: Cleaning up Git locks..."
+if [ -f ~/.git/index.lock ]; then
+    rm ~/.git/index.lock
+    echo "✅ Removed Git index lock"
+fi
+
+# Configure Git
+echo "🔧 Step 2: Configuring Git merge strategy..."
+git config pull.rebase false
+
+# Pull latest changes
+echo "🔄 Step 3: Syncing with GitHub repository..."
+git pull origin main --allow-unrelated-histories
+
+echo "📦 Step 4: Starting batch uploads..."
+
+# Batch 1: Configuration files
+echo "📦 Batch 1/10: Configuration files..."
+git add .gitignore
+git add *.json 2>/dev/null || true
+git commit -m "Batch 1: Add .gitignore and configuration files" 2>/dev/null || echo "No changes in batch 1"
+git push origin main
+
+# Batch 2: Images
+echo "📦 Batch 2/10: Logo and branding files..."
+git add *.jpg 2>/dev/null || true
+git add *.png 2>/dev/null || true
+git add *.webp 2>/dev/null || true
+git commit -m "Batch 2: Add logo and branding assets" 2>/dev/null || echo "No changes in batch 2"
+git push origin main
+
+# Batch 3: PDFs
+echo "📦 Batch 3/10: PDF documents..."
+git add *.pdf 2>/dev/null || true
+git commit -m "Batch 3: Add PDF documentation and assets" 2>/dev/null || echo "No changes in batch 3"
+git push origin main
+
+# Batch 4: Figma design codes
+echo "📦 Batch 4/10: Figma design codes..."
+if [ -d "figma design codes" ]; then
+    git add "figma design codes/"
+    git commit -m "Batch 4: Add Figma design codes and specifications" 2>/dev/null || echo "No changes in batch 4"
+    git push origin main
+fi
+
+# Batch 5: Logo and mockups
+echo "📦 Batch 5/10: Logo and mockups..."
+if [ -d "logo and muckups" ]; then
+    git add "logo and muckups/"
+    git commit -m "Batch 5: Add logo and mockup files" 2>/dev/null || echo "No changes in batch 5"
+    git push origin main
+fi
+
+# Batch 6: Website items
+echo "📦 Batch 6/10: Website items..."
+if [ -d "website items" ]; then
+    git add "website items/"
+    git commit -m "Batch 6: Add website components and items" 2>/dev/null || echo "No changes in batch 6"
+    git push origin main
+fi
+
+# Batch 7: Business plan
+echo "📦 Batch 7/10: Business plan and strategies..."
+if [ -d "buisnessplan and strategies" ]; then
+    git add "buisnessplan and strategies/"
+    git commit -m "Batch 7: Add business plan and strategy documents" 2>/dev/null || echo "No changes in batch 7"
+    git push origin main
+fi
+
+# Batch 8: MVP React components
+echo "📦 Batch 8/10: Digital Harmony Studio MVP (React components)..."
+if [ -d "Digital-Harmony-Studio-MVP" ]; then
+    git add "Digital-Harmony-Studio-MVP/digital-harmony-studio-app/*.jsx" 2>/dev/null || true
+    git add "Digital-Harmony-Studio-MVP/digital-harmony-studio-app/*.js" 2>/dev/null || true
+    git add "Digital-Harmony-Studio-MVP/digital-harmony-studio-app/*.html" 2>/dev/null || true
+    git add "Digital-Harmony-Studio-MVP/digital-harmony-studio-app/*.json" 2>/dev/null || true
+    git commit -m "Batch 8: Add Digital Harmony Studio MVP React components" 2>/dev/null || echo "No changes in batch 8"
+    git push origin main
+fi
+
+# Batch 9: MVP assets
+echo "📦 Batch 9/10: Digital Harmony Studio MVP (assets)..."
+if [ -d "Digital-Harmony-Studio-MVP" ]; then
+    git add "Digital-Harmony-Studio-MVP/" 2>/dev/null || true
+    git commit -m "Batch 9: Add Digital Harmony Studio MVP assets and configurations" 2>/dev/null || echo "No changes in batch 9"
+    git push origin main
+fi
+
+# Batch 10: Remaining files
+echo "📦 Batch 10/10: Remaining files..."
+git add *.sh 2>/dev/null || true
+git add *.md 2>/dev/null || true
+git commit -m "Batch 10: Add remaining documentation and script files" 2>/dev/null || echo "No changes in batch 10"
+git push origin main
+
+echo "🎉 Batch upload completed!"
+echo "🔗 Check: https://github.com/Mehran0031/Mehran0031-Digital-Harmony-Studio-MVP"
+
