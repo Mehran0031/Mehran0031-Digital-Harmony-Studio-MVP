@@ -1,0 +1,349 @@
+/* src/styles/AudioWorkstation.css */
+.audio-workstation {
+  background: #181818;
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.audio-workstation h2 {
+  color: #D4AF37;
+  margin-bottom: 24px;
+}
+.dropzone {
+  border: 2px dashed #D4AF37;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+.dropzone.active {
+  border-color: #fff;
+}
+.file-list {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.file-item {
+  background: #232323;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid transparent;
+  transition: border 0.2s, background 0.2s;
+}
+.file-item.selected, .file-item:hover {
+  border: 1px solid #D4AF37;
+  background: #222018;
+}
+.waveform-display {
+  background: #232323;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  min-height: 100px;
+}
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+button, select {
+  background: #232323;
+  color: #fff;
+  border: 1px solid #D4AF37;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled), select:hover {
+  background: #D4AF37;
+  color: #181818;
+}
+.spectrum {
+  background: #181818;
+  border-radius: 6px;
+  padding: 4px 0 0 0;
+  margin-bottom: 12px;
+  min-height: 40px;
+  align-items: flex-end;
+}
+.spectrum div {
+  background: linear-gradient(180deg, #37A1D4 0%, #D4AF37 100%);
+  border-radius: 1px;
+  margin-right: 1px;
+  transition: height 0.1s;
+}
+.metadata {
+  font-size: 0.95rem;
+  background: rgba(212,175,55,0.08);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+}
+.daw-controls button {
+  min-width: 32px;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+}
+.daw-controls span {
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+.meters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.meter-label {
+  color: #D4AF37;
+  font-size: 0.85rem;
+  margin-right: 4px;
+}
+.progress-bar {
+  background: #232323;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.progress-bar > div {
+  background: linear-gradient(90deg, #D4AF37 0%, #37A1D4 100%);
+  height: 100%;
+  transition: width 0.2s;
+}
+
+/* --- Advanced DAW Features --- */
+.region-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.region-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.region-item {
+  background: #232323;
+  border: 1.5px solid #37A1D4;
+  border-radius: 6px;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.region-item.selected, .region-item:hover {
+  border-color: #D4AF37;
+  background: #222018;
+}
+.region-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 4px;
+  border: 1px solid #D4AF37;
+}
+.region-actions button {
+  background: transparent;
+  border: none;
+  color: #D4AF37;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+.region-actions button:hover {
+  color: #37A1D4;
+}
+.batch-export-btn {
+  background: linear-gradient(90deg, #D4AF37 0%, #37A1D4 100%);
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-weight: 600;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(52,52,52,0.12);
+}
+
+/* --- MIDI Piano Roll --- */
+.midi-section {
+  background: #232323;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.midi-track-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.midi-track-item {
+  background: #181818;
+  color: #D4AF37;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid #232323;
+  transition: border 0.2s, background 0.2s;
+}
+.midi-track-item.selected, .midi-track-item:hover {
+  border-color: #37A1D4;
+  background: #222018;
+}
+.piano-roll {
+  display: grid;
+  grid-template-columns: repeat(64, 1fr);
+  grid-auto-rows: 18px;
+  background: #181818;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 10px;
+  border: 1px solid #232323;
+}
+.piano-roll-key {
+  background: #232323;
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: right;
+  padding-right: 6px;
+  border-bottom: 1px solid #232323;
+}
+.piano-roll-note {
+  background: linear-gradient(90deg, #37A1D4 0%, #D4AF37 100%);
+  border-radius: 3px;
+  margin: 1px 0;
+  height: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.piano-roll-note.selected, .piano-roll-note:hover {
+  background: linear-gradient(90deg, #D4AF37 0%, #37A1D4 100%);
+}
+.piano-roll-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #D4AF37;
+  z-index: 2;
+  transition: left 0.05s;
+}
+
+/* --- Automation & Effects --- */
+.automation-lane {
+  background: #232323;
+  border-radius: 4px;
+  margin: 6px 0 12px 0;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.automation-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #D4AF37;
+  border-radius: 50%;
+  border: 2px solid #232323;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.automation-point.selected, .automation-point:hover {
+  background: #37A1D4;
+}
+.effect-chain {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.effect-unit {
+  background: #232323;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 12px;
+  border: 1px solid #37A1D4;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+}
+.effect-unit.selected, .effect-unit:hover {
+  border-color: #D4AF37;
+  background: #222018;
+}
+
+/* --- Misc DAW UI --- */
+.tooltip {
+  position: absolute;
+  background: #232323;
+  color: #D4AF37;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.drag-handle {
+  width: 16px;
+  height: 16px;
+  background: #D4AF37;
+  border-radius: 3px;
+  cursor: grab;
+  margin-right: 4px;
+}
+.shortcut-hint {
+  color: #37A1D4;
+  font-size: 0.85rem;
+  margin-left: 6px;
+}
+.undo-redo-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.undo-redo-controls button {
+  background: #232323;
+  color: #D4AF37;
+  border: 1px solid #37A1D4;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.undo-redo-controls button:hover {
+  background: #D4AF37;
+  color: #181818;
+}
+@media (max-width: 600px) {
+  .audio-workstation {
+    padding: 12px;
+  }
+  .controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
